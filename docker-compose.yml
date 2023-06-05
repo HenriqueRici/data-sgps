@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+  database:
+    container_name: data-sgps-database
+    image: mysql
+    ports:
+      - '3307:3307'
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: 'data-ssgps-db'
+      MYSQL_USER: user
+      MYSQL_PASSWORD: root
+    volumes:
+      - ./docker/mysql:/var/lib/mysql
+    restart: on-failure
+    networks:
+      - data-sgps-network
+networks:
+  data-sgps-network:
+    name: data-sgps-network
+    driver: bridge
