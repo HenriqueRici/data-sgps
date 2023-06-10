@@ -4,10 +4,10 @@ services:
     container_name: data-sgps-database
     image: mysql
     ports:
-      - '3307:3307'
+      - '3307:3306'
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: 'data-ssgps-db'
+      MYSQL_DATABASE: 'data-sgps-db'
       MYSQL_USER: user
       MYSQL_PASSWORD: root
     volumes:
